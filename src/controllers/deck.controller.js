@@ -1,4 +1,6 @@
+const mongoose = require("mongoose");
 const httpStatus = require("http-status");
+
 const { CARD_IDS } = require("../assets/cards.data");
 const Deck = require("../models/deck");
 
@@ -8,6 +10,13 @@ const Deck = require("../models/deck");
  */
 const createDeck = (req, res) => {
   const status = httpStatus.CREATED;
+  const newDeck = new Deck({
+    _id: new mongoose.Types.ObjectId(),
+    cards: CARD_IDS,
+  });
+
+  newDeck.save();
+
   const response = {
     code: status,
     message: "Deck successfully created",
