@@ -1,6 +1,7 @@
 const express = require("express");
 const httpStatus = require("http-status");
 const routes = require("./routes/v1");
+const bJRoutes = require("./routes/v1/blackjack");
 const { errorHandler } = require("./middleware/error");
 require("dotenv").config;
 
@@ -19,6 +20,7 @@ app.use("/static", express.static("static"));
 
 // api routes
 app.use("/v1", routes);
+app.use("/blackjack", bJRoutes);
 
 // send back a 404 error for any unknown api request
 app.use((req, res, next) => {
