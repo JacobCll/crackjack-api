@@ -1,7 +1,6 @@
 const express = require("express");
 const httpStatus = require("http-status");
 const routes = require("./routes/v1");
-const bJRoutes = require("./routes/v1/blackjack");
 const { errorHandler } = require("./middleware/error");
 require("dotenv").config;
 
