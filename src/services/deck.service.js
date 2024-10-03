@@ -7,6 +7,11 @@ const { CARD_IDS } = require("../assets/cards.data");
 
 const createDeck = () => {};
 
+/**
+ * Shuffle deck
+ * @param {Array} deck
+ * @returns {Array}
+ */
 const shuffleDeck = (deck) => {
   for (let i = deck.length; i >= 0; i--) {
     const newPosition = Math.floor((i + 1) * Math.random());
